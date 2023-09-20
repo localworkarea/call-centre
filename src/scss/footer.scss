@@ -1,0 +1,73 @@
+.footer {
+  background-color: $gray-434343;
+  // .footer__container
+  &__container {
+  }
+  // .footer__head
+  &__head {
+   @include adaptiveValue("padding-top", 50, 30);
+   @include adaptiveValue("padding-bottom", 75, 30);
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: toRem(30);
+   @media (max-width:$tablet){
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: toRem(60);
+   }
+   @media (max-width: em(600.98)){
+      gap: toRem(20);
+      grid-template-columns: 1fr;
+   }
+  }
+  // .footer__logo
+  &__logo {
+    img {
+			height: auto;
+			@include adaptiveValue("width", 207, 170);
+		}
+  }
+  // .footer__address
+  &__address {
+  }
+  // .footer__title
+  &__title {
+    color: white;
+    @include adaptiveValue("margin-bottom", 50, 10,0,1920,600);
+    font-weight: 600;
+    @include adaptiveValue("font-size", 22, 16);
+  }
+  // .footer__list
+  &__list {
+  }
+  // .footer__item
+  &__item {
+    @include adaptiveValue("font-size", 18, 12);
+    font-weight: 500;
+    line-height: 1.5;
+    opacity: .8;
+  }
+  // .footer__link
+  &__link {
+    display: inline-block;
+  }
+  // .footer__name
+  &__name {
+  }
+  // .footer__name-txt
+  &__name-txt {
+    color: white;
+  }
+  // .footer__bottom
+  &__bottom {
+    background-color: $gray-1C1C1C;
+  }
+  // .footer__copy
+  &__copy {
+    padding: toRem(20) 0;
+    text-align: center;
+    color: $red;
+    @include adaptiveValue("font-size", 18, 16);
+    font-weight: 500;
+    line-height: normal;
+  }
+}

@@ -1,0 +1,95 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.txt-red {
+  color: $red !important;
+}
+
+.title-second {
+  color: #FFF;
+  font-family: "Benzin";
+  @include adaptiveValue("font-size", 48,32);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.02;
+  text-transform: uppercase;
+  @include adaptiveValue("margin-bottom", 75, 40);
+  // .title-second__wrapper
+  &__wrapper {
+  }
+}
+
+.txt-big {
+  @include adaptiveValue("font-size", 32, 18);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.12px;
+  span {
+    font-weight: 700;
+  }
+}
+.txt-sm {
+  @include adaptiveValue("font-size", 20, 14);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+.txt-norm {
+  @include adaptiveValue("font-size", 22, 14);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.btn {
+  @include adaptiveValue("padding-top", 30, 22);
+  @include adaptiveValue("padding-bottom", 30, 22);
+  @include adaptiveValue("padding-left", 43, 30);
+  @include adaptiveValue("padding-right", 43, 30);
+  border-radius: 56px;
+  background: #FFF;
+  box-shadow: -3px 4px 0px 0px $red inset;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1C1C1C;
+  @include adaptiveValue("font-size", 20, 14);
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -20%;
+    height: 100%;
+    width: 0%;
+    background-color: $red;
+    opacity: .9;
+    transition: all .45s ease;
+    border-radius: 56px;
+  }
+  &:hover {
+    color: white !important;
+    &::before {
+      width: 120%;
+    }
+  }
+
+}
+
+.padding-section {
+  @include adaptiveValue("padding-top", 100, 60);
+  @include adaptiveValue("padding-bottom", 100, 60);
+}
