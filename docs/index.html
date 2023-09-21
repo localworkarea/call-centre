@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230920232202">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230921120959">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
 					<a href="tel:+380507050705" class="contacts-header__phone">
 						+380507050705
 					</a>
-					<a href="#" class="contacts-header__email">
+					<a href="#" data-popup="#popupOne" class="contacts-header__email">
 						<img src="img/icons/mail.svg" alt="email">
 					</a>
 				</address>
@@ -69,7 +69,7 @@
 								<span class="sub-title-hero__txt">професіоналам</span>
 							</span>
 						</p>
-						<a href="#" class="hero__btn btn">
+						<a href="#" data-popup="#popupOne" class="hero__btn btn">
 							<span>замовити консультацію</span>
 						</a>
 					</div>
@@ -221,7 +221,7 @@
 					<div class="service__body">
 						<ul class="service__list">
 							<li class="service__item">
-								<a href="#" class="service__btn">
+								<a href="#" data-popup="#popupThree" class="service__btn">
 									<span>Детальніше</span>
 									<img src="img/icons/arrow.svg" alt="arrow">
 								</a>
@@ -249,11 +249,11 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="service__btn-touch btn"><span>Детальніше</span></a>
+								<a href="#" data-popup="#popupThree" class="service__btn-touch btn"><span>Детальніше</span></a>
 								<picture><source srcset="img/icons/logo-big.webp" type="image/webp"><img class="service__bg" src="img/icons/logo-big.png" alt="background"></picture>
 							</li>
 							<li class="service__item">
-								<a href="#" class="service__btn">
+								<a href="#" data-popup="#popupThree" data-popup="#popupThree" class="service__btn">
 									<span>Детальніше</span>
 									<img src="img/icons/arrow.svg" alt="arrow">
 								</a>
@@ -284,11 +284,11 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="service__btn-touch btn"><span>Детальніше</span></a>
+								<a href="#" data-popup="#popupThree" class="service__btn-touch btn"><span>Детальніше</span></a>
 								<picture><source srcset="img/icons/logo-big.webp" type="image/webp"><img class="service__bg" src="img/icons/logo-big.png" alt="background"></picture>
 							</li>
 							<li class="service__item">
-								<a href="#" class="service__btn">
+								<a href="#" data-popup="#popupThree" class="service__btn">
 									<span>Детальніше</span>
 									<img src="img/icons/arrow.svg" alt="arrow">
 								</a>
@@ -307,11 +307,11 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="service__btn-touch btn"><span>Детальніше</span></a>
+								<a href="#" data-popup="#popupThree" class="service__btn-touch btn"><span>Детальніше</span></a>
 								<picture><source srcset="img/icons/logo-big.webp" type="image/webp"><img class="service__bg" src="img/icons/logo-big.png" alt="background"></picture>
 							</li>
 							<li class="service__item">
-								<a href="#" class="service__btn">
+								<a href="#" data-popup="#popupThree" class="service__btn">
 									<span>Детальніше</span>
 									<img src="img/icons/arrow.svg" alt="arrow">
 								</a>
@@ -336,7 +336,7 @@
 										</li>
 									</ul>
 								</div>
-								<a href="#" class="service__btn-touch btn"><span>Детальніше</span></a>
+								<a href="#" data-popup="#popupThree" class="service__btn-touch btn"><span>Детальніше</span></a>
 								<picture><source srcset="img/icons/logo-big.webp" type="image/webp"><img class="service__bg" src="img/icons/logo-big.png" alt="background"></picture>
 							</li>
 						</ul>
@@ -533,10 +533,10 @@
 					</h2>
 					<p class="questions__sub-title">Залиште свій E-mail або номер телефону і наш менеджер зв’яжеться з вами протягом 15 хвилин!</p>
 					<div class="questions__buttons">
-						<a href="#" class="questions__btn btn">
+						<a href="#" data-popup="#popupTwo" class="questions__btn btn">
 							<span>зв’язатися по email</span>
 						</a>
-						<a href="#" class="questions__btn btn">
+						<a href="#" data-popup="#popupThree" class="questions__btn btn">
 							<span>замовити зворотній дзвінок</span>
 						</a>
 					</div>
@@ -589,17 +589,84 @@
 			</div>
 		</footer>
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
+	<div id="popupOne" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрити</button>
-				<div class="popup__text">
-					Text
-				</div>
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="close">
+				</button>
+				<p class="popup__title">послуги <span>колл-центру</span> в україні</p>
+				<p class="popup__txt">Залиште свій E-mail і наш менеджер зв’яжеться з вами протягом 15 хвилин!</p>
+				<form name="Consultanion" data-dev data-popup-message="#popupMessage" action="files/sendmail/sendmail.php" method="POST">
+
+					<div class="form__block form__block_mail">
+						<input type="text" name="form[email]" data-required="email" data-validate data-error="Заповніть поле" placeholder="E-mail" class="input input__email">
+						<button type="submit" class="form__button form__button_email">
+							<img src="img/icons/arrow.svg" alt="arrow">
+						</button>
+					</div>
+
+				</form>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230920232202"></script>
+
+	<div id="popupTwo" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="close">
+				</button>
+				<p class="popup__title">залишилися <span>питання</span>?</p>
+				<p class="popup__txt">Залиште свій E-mail і наш менеджер зв’яжеться з вами протягом 15 хвилин!</p>
+				<form name="Questions" data-dev data-popup-message="#popupMessage" action="files/sendmail/sendmail.php" method="POST">
+
+					<div class="form__block form__block_mail">
+						<input type="text" name="form[email]" data-required="email" data-validate data-error="Заповніть поле" placeholder="E-mail" class="input input__email">
+						<button type="submit" class="form__button form__button_email">
+							<img src="img/icons/arrow.svg" alt="arrow">
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="popupThree" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="close">
+				</button>
+				<p class="popup__title">залишилися <span>питання</span>?</p>
+				<p class="popup__txt">Залиште свій номер телефону і наш менеджер зв’яжеться з вами протягом 15 хвилин!</p>
+				<form name="Consultanion" data-dev data-popup-message="#popupMessage" action="files/sendmail/sendmail.php" method="POST">
+
+					<div class="form__block form__block_phone">
+						<input type="tel" name="tel" data-inputmask="'mask': '+38 (099) 999 99 99'" name="form[phone]" data-validate data-required data-error="Заповніть поле" placeholder="Номер телефону" class="input input__phone">
+						<button type="submit" class="form__button form__button_phone">
+							<img src="img/icons/arrow.svg" alt="arrow">
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="popupMessage" aria-hidden="true" class="popup popup-close">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="close">
+				</button>
+				<p class="popup__title">дякуємо за <span>звернення</span>!</p>
+				<p class="popup__txt">Наш менеджер звяжеться з вами в найкоротший термін.</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230921120959"></script>
 </body>
 
 </html>

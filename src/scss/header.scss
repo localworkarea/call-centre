@@ -31,6 +31,9 @@
 			  position: relative;
 				z-index: 2;
 		}
+		@media (max-height: em(550.98)){
+			  z-index: 0;
+		}
 		img {
 			height: auto;
 			@include adaptiveValue("width", 207, 150);
@@ -59,7 +62,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			padding: toRem(15) toRem(15) toRem(15) toRem(50);
+			padding: toRem(50) toRem(15) toRem(50) toRem(50);
 			background-color: #000;
 
 			display: flex;
@@ -72,7 +75,15 @@
 			opacity: 0;
 			pointer-events: none;
 
-			.menu-open & {
+		}
+		@media (max-width:$mobileXS){
+			padding: toRem(50) toRem(15) toRem(50) toRem(15);
+		}
+		@media (max-height: em(550.98)){
+			  justify-content: unset;
+		}
+		.menu-open & {
+			@media (max-width: em(1200.98)){
 				opacity: 1;
 				pointer-events: all;
 			}
@@ -86,18 +97,27 @@
 		@include adaptiveValue("column-gap", 32, 16,0,1920,1440);
 		row-gap: toRem(10);
 
+		&:not(:last-child) {
+			@media (max-width: em(1200.98)){
+				margin-bottom: toRem(50);
+			}
+			@media (max-width:$mobileSmall){
+				 margin-bottom: toRem(30); 
+			}
+		}
 		@media (max-width: em(1200.98)){
 			  flex-direction: column;
 				align-content: center;
 				align-items: flex-start;
 				row-gap: toRem(32);
-				&:not(:last-child) {
-					margin-bottom: toRem(50);
-				}
 		}
 		@media (max-width:$mobileSmall){
 			 row-gap: toRem(20); 
 		}
+		@media (max-width:$mobileXS){
+			 row-gap: toRem(15); 
+		}
+		
 	}
 	// .menu__item
 	&__item {
@@ -134,6 +154,7 @@
 		color: #FFF;
 		@include adaptiveValue("font-size", 18, 16,0,1920,1440);
 		@include adaptiveValue("font-size", 16, 28,3,1201,1200);
+		@include adaptiveValue("font-size", 28, 24,3,480,375);
 		font-weight: 500;
 		line-height: normal;
 		text-transform: uppercase;
@@ -190,6 +211,7 @@
 		font-family: Montserrat;
 		@include adaptiveValue("font-size", 18, 16,0,1920,1440);
 			@include adaptiveValue("font-size", 16, 28,3,1201,1200);
+			@include adaptiveValue("font-size", 28, 24,3,480,375);
 		font-weight: 500;
 		line-height: normal;
 	}
@@ -227,6 +249,7 @@
 		color: #FFF;
 		@include adaptiveValue("font-size", 18, 16,0,1920,1440);
 		@include adaptiveValue("font-size", 16, 28,3,1201,1200);
+		@include adaptiveValue("font-size", 28, 24,3,480,375);
 		font-weight: 500;
 		line-height: normal;
 		text-transform: uppercase;
