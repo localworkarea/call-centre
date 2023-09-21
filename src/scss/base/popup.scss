@@ -124,5 +124,14 @@ body::after {
 			max-width: toRem(450);
 		}
 	}
+		// .popup__bg
+		&__bg {
+			position: absolute;
+			z-index: -1;
+			bottom: 0;
+			right: 0;
+			height: auto;
+			@include adaptiveValue("width", 500, 180);
+		}
 }
 

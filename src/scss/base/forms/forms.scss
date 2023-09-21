@@ -85,10 +85,26 @@ textarea.input {
 		}
 		// .form__block_phone
 		&_phone {
+			overflow: unset;
+			padding-top: toRem(10);
 			padding-bottom: toRem(10);
 			border-bottom: toRem(2) solid white;
 			@media (max-width:$mobileSmall){
+				padding-top: toRem(5);
 				 padding-bottom: toRem(5); 
+			}
+
+			&._form-error {
+				border-color: $red;
+			}
+
+			.form__error {
+				top: -5px;
+				right: toRem(40) ;
+				
+				@media (max-width:$mobileSmall){
+					 right: 20px; 
+				}
 			}
 		}
 	}
@@ -126,6 +142,11 @@ textarea.input {
 		}
 		&_phone {
 			img {
+				width: toRem(23);
+				height: auto;
+				@media (max-width:$mobileSmall){
+					 width: toRem(18); 
+				}
 				filter: invert(100%) sepia(34%) saturate(0%) hue-rotate(142deg) brightness(109%) contrast(101%);
 			}
 		}

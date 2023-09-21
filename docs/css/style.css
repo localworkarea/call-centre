@@ -289,8 +289,19 @@ textarea.input {
 }
 
 .form__block_phone {
+  overflow: unset;
+  padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   border-bottom: 0.125rem solid white;
+}
+
+.form__block_phone._form-error {
+  border-color: #E31E24;
+}
+
+.form__block_phone .form__error {
+  top: -5px;
+  right: 2.5rem;
 }
 
 .form__button_email {
@@ -320,6 +331,8 @@ textarea.input {
 }
 
 .form__button_phone img {
+  width: 1.4375rem;
+  height: auto;
   -webkit-filter: invert(100%) sepia(34%) saturate(0%) hue-rotate(142deg) brightness(109%) contrast(101%);
           filter: invert(100%) sepia(34%) saturate(0%) hue-rotate(142deg) brightness(109%) contrast(101%);
 }
@@ -591,6 +604,14 @@ body::after {
 
 .popup-close .popup__txt {
   max-width: 28.125rem;
+}
+
+.popup__bg {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  height: auto;
 }
 
 [class*=-ibg] {
@@ -1555,6 +1576,10 @@ body::after {
     margin-bottom: 3.9375rem;
   }
 
+  .popup__bg {
+    width: 31.25rem;
+  }
+
   .title-second {
     font-size: 3rem;
   }
@@ -2019,6 +2044,10 @@ body::after {
 
   .popup__txt:not(:last-child) {
     margin-bottom: 1.25rem;
+  }
+
+  .popup__bg {
+    width: 11.25rem;
   }
 
   .title-second {
@@ -2686,7 +2715,12 @@ body::after {
   }
 
   .form__block_phone {
+    padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
+  }
+
+  .form__block_phone .form__error {
+    right: 20px;
   }
 
   .form__button_email {
@@ -2695,6 +2729,10 @@ body::after {
   }
 
   .form__button_email img {
+    width: 1.125rem;
+  }
+
+  .form__button_phone img {
     width: 1.125rem;
   }
 
@@ -2940,6 +2978,18 @@ body::after {
 @supports not (margin-bottom: clamp( 1.25rem , 0.6609589041rem  +  2.9452054795vw , 3.9375rem )) {
     .popup__txt:not(:last-child) {
       margin-bottom: calc(1.25rem + 2.6875 * (100vw - 20rem) / 91.25);
+    }
+}
+
+@supports (width: clamp( 11.25rem , 6.8664383562rem  +  21.9178082192vw , 31.25rem )) {
+    .popup__bg {
+      width: clamp( 11.25rem , 6.8664383562rem  +  21.9178082192vw , 31.25rem );
+    }
+}
+
+@supports not (width: clamp( 11.25rem , 6.8664383562rem  +  21.9178082192vw , 31.25rem )) {
+    .popup__bg {
+      width: calc(11.25rem + 20 * (100vw - 20rem) / 91.25);
     }
 }
 
