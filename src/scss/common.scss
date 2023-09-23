@@ -12,8 +12,17 @@
   line-height: 1.02;
   text-transform: uppercase;
   @include adaptiveValue("margin-bottom", 75, 40);
+  position: relative;
   // .title-second__wrapper
   &__wrapper {
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.2s linear;
+
+    background-attachment: scroll; 
+    -webkit-text-fill-color: rgba(250, 250, 250, 0.08);
+    background-image: linear-gradient(90deg, rgba(255,255,255,1) 19%, rgba(227,30,36,1) 68%);
   }
 }
 

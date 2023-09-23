@@ -73,3 +73,51 @@ document.addEventListener('DOMContentLoaded', function () {
   // Вызвать функцию для обработки начального состояния
   handleHiddenAttributeChange();
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+// GSAP Animation title ======================
+const titleElements = document.querySelectorAll(".title-second__wrapper");
+if (titleElements.length > 0) {
+  titleElements.forEach((titleElement) => {
+    gsap.to(titleElement, {
+      scrollTrigger: {
+        trigger: titleElement,
+        start: "top bottom",
+        end: "top center",
+        scrub: 1,
+      },
+      duration: 1,
+      backgroundSize: "100% 100%",
+      ease: "none",
+    });
+  });
+}
+
+// Split text ====================================
+const splitText = new SplitType('.split-text', { types: 'lines'});
+window.addEventListener("resize", function() {
+  splitText.split();
+});
+
+gsap.to(".hero__bg", {
+  scrollTrigger: {
+    trigger: '.hero__bg',
+    start: "top top",
+    scrub: true,
+  },
+  yPercent: -10,
+})
+
+// gsap.to(".wrapper-spoller", {
+//   scrollTrigger: {
+//     trigger: '.possibilities__spollers',
+//     start: "bottom bottom",
+//     end: "top top",
+//     scrub: true,
+//   },
+//   ease: "back",
+//   x: 0,
+//   stagger: 0.1,
+//   opacity: 1,
+// })

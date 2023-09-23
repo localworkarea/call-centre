@@ -8,26 +8,52 @@
    @include adaptiveValue("padding-top", 50, 30);
    @include adaptiveValue("padding-bottom", 75, 30);
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-columns: minmax(200px, 450px) minmax(700px, 1fr)  minmax(200px, 450px);
    gap: toRem(30);
-   @media (max-width:$tablet){
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: toRem(60);
-   }
-   @media (max-width: em(600.98)){
-      gap: toRem(20);
-      grid-template-columns: 1fr;
-   }
+    @media (max-width: em(1200.98)){
+        grid-template-columns: 1fr;
+    }
   }
   // .footer__logo
   &__logo {
+    opacity: 0;
+    transition: all 1.3s cubic-bezier(.4,0,.2,1);
+    ._watcher-view & {
+      opacity: 1;
+    } 
     img {
 			height: auto;
 			@include adaptiveValue("width", 207, 170);
 		}
   }
+	// .footer__block
+	&__block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    @media (max-width: em(600.98)){
+        grid-template-columns: 1fr;
+        row-gap: toRem(30);
+    }
+	}
   // .footer__address
   &__address {
+    &:nth-child(1) {
+          opacity: 0;
+    transition: all 1.3s cubic-bezier(.4,0,.2,1);
+    ._watcher-view & {
+      opacity: 1;
+      transition-delay: 0.15s;
+    } 
+    }
+    &:nth-child(2) {
+          opacity: 0;
+    transition: all 1.3s cubic-bezier(.4,0,.2,1);
+    ._watcher-view & {
+      opacity: 1;
+      transition-delay: 0.3s;
+    } 
+    }
   }
   // .footer__title
   &__title {
@@ -41,7 +67,7 @@
   }
   // .footer__item
   &__item {
-    @include adaptiveValue("font-size", 18, 12);
+    @include adaptiveValue("font-size", 18, 16);
     font-weight: 500;
     line-height: 1.5;
     opacity: .8;
@@ -56,6 +82,12 @@
   // .footer__name-txt
   &__name-txt {
     color: white;
+    opacity: 0;
+    transition: all 1.3s cubic-bezier(.4,0,.2,1);
+    ._watcher-view & {
+      opacity: 1;
+      transition-delay: 0.45s;
+    } 
   }
   // .footer__bottom
   &__bottom {
@@ -69,5 +101,12 @@
     @include adaptiveValue("font-size", 18, 12);
     font-weight: 500;
     line-height: normal;
+
+    opacity: 0;
+    transition: all 1.3s cubic-bezier(.4,0,.2,1);
+    ._watcher-view & {
+      opacity: 1;
+      transition-delay: 0.6s;
+    } 
   }
 }
