@@ -104,23 +104,40 @@
     overflow: hidden;
     &:nth-child(1) {
       display: none;
+      @media (max-width:$mobileSmall){
+         display: block; 
+      }
       .sub-title-hero__txt {
-
+        transition-delay: 1.13s;
       }
     }
     &:nth-child(2) {
       .sub-title-hero__txt {
         transition-delay: 1.13s;
+        @media (max-width:$mobileSmall){
+          transition-delay: 1.26s; 
+        }
+        span {
+          @media (max-width:$mobileSmall){
+             display: none; 
+          }
+        }
       }
     }
     &:nth-child(3) {
       .sub-title-hero__txt {
         transition-delay: 1.26s;
+        @media (max-width:$mobileSmall){
+          transition-delay: 1.39s; 
+        }
       }
     }
     &:nth-child(4) {
       .sub-title-hero__txt {
         transition-delay: 1.39s;
+        @media (max-width:$mobileSmall){
+          transition-delay: 1.52s; 
+        }
       }
     }
   }
@@ -140,6 +157,11 @@
     opacity: 0;
     transform: translateY(100%);
     transition: all 1s cubic-bezier(.4,0,.2,1);
+
+    span {
+
+    }
+
     .loaded & {
       opacity: 1;
       transform: translateY(0);

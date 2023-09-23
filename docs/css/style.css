@@ -1128,6 +1128,11 @@ body::after {
   display: none;
 }
 
+.sub-title-hero__wrapper:nth-child(1) .sub-title-hero__txt {
+  -webkit-transition-delay: 1.13s;
+          transition-delay: 1.13s;
+}
+
 .sub-title-hero__wrapper:nth-child(2) .sub-title-hero__txt {
   -webkit-transition-delay: 1.13s;
           transition-delay: 1.13s;
@@ -4176,6 +4181,29 @@ body::after {
 
   .hero__title {
     max-width: 21.875rem;
+  }
+
+  .sub-title-hero__wrapper:nth-child(1) {
+    display: block;
+  }
+
+  .sub-title-hero__wrapper:nth-child(2) .sub-title-hero__txt {
+    -webkit-transition-delay: 1.26s;
+            transition-delay: 1.26s;
+  }
+
+  .sub-title-hero__wrapper:nth-child(2) .sub-title-hero__txt span {
+    display: none;
+  }
+
+  .sub-title-hero__wrapper:nth-child(3) .sub-title-hero__txt {
+    -webkit-transition-delay: 1.39s;
+            transition-delay: 1.39s;
+  }
+
+  .sub-title-hero__wrapper:nth-child(4) .sub-title-hero__txt {
+    -webkit-transition-delay: 1.52s;
+            transition-delay: 1.52s;
   }
 
   .sub-title-hero__txt {
