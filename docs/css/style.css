@@ -1056,6 +1056,8 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 3.125rem;
 }
 
 .hero__body {
@@ -1069,8 +1071,6 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 3.75rem;
-  padding-bottom: 5rem;
 }
 
 .hero__title {
@@ -2877,6 +2877,37 @@ body::after {
   height: auto;
 }
 
+@media (min-width: 59.43625em) and (max-height: 36.31125em) {
+  .hero {
+    height: 100%;
+  }
+
+  .hero__container {
+    padding-top: 6.25rem;
+  }
+}
+
+@media (min-width: 74.99875em) and (max-height: 41.31125em) {
+  .hero {
+    height: 100%;
+  }
+
+  .hero__container {
+    padding-top: 7.5rem;
+  }
+}
+
+@media (min-width: 90.06125em) and (max-height: 46.93625em) {
+  .hero {
+    height: 100%;
+  }
+
+  .hero__container {
+    padding-top: 9.375rem;
+    padding-bottom: 6.25rem;
+  }
+}
+
 @media (min-width: 111.25em) {
   .input {
     font-size: 1.375rem;
@@ -4261,7 +4292,7 @@ body::after {
 }
 
 @media (max-width: 20.68625em) {
-  .hero__body {
+  .hero__container {
     padding-top: 5rem;
   }
 }
