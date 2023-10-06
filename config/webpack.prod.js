@@ -40,6 +40,9 @@ const config = {
 		type: 'filesystem'
 	},
 	optimization: {
+		// --------------------------------------------------------------
+		// minimize: false,
+		// --------------------------------------------------------------
 		minimizer: [new TerserPlugin({
 			extractComments: false,
 		})],

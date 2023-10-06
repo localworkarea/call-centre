@@ -22,7 +22,9 @@ webPackConfigBeautify.optimization = {
 			parse: {},
 			compress: {
 				defaults: false,
+				// =========================================================
 				unused: true,
+				// unused: true, ----------------------
 			},
 			mangle: false,
 			module: false,

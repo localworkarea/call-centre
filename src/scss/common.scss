@@ -1,4 +1,8 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .txt-red {
   color: $red !important;
 }
@@ -102,3 +106,5 @@
   @include adaptiveValue("padding-top", 100, 60);
   @include adaptiveValue("padding-bottom", 100, 60);
 }
+
+

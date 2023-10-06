@@ -1616,6 +1616,42 @@
     }
     
   }
+		// .price__txt-change
+		&__txt-change {
+      display: inline-block;
+		}
+		// .price__txt-chng-one
+		&__txt-chng-one {
+      display: none;
+      &._show-txt {
+        display: inline-block;
+      }
+      &.chng-txt-01 {
+      }
+      &.chng-txt-02 {
+      }
+      &.chng-txt-03 {
+      }
+      &.chng-txt-04 {
+      }
+      &.chng-txt-05 {
+      }
+      &.chng-txt-06 {
+      }
+      &.chng-txt-07 {
+      }
+      &.chng-txt-08 {
+      }
+      &.chng-txt-09 {
+      }
+      &.chng-txt-10 {
+      }
+      &.chng-txt-11 {
+      }
+      &.chng-txt-12 {
+      }
+		}
+
 }
 
 // ===================================================================
@@ -1721,10 +1757,18 @@
     &__container {
       display: flex;
       justify-content: flex-end;
+      @media (max-width:$mobileSmall){
+        padding-right: 24px; 
+      }
+    }
+    // .phone-page__wrapper
+    &__wrapper {
+      position: relative;
     }
   // .phone-page__link
   &__link {
     pointer-events: all;
+    cursor: pointer;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: -3px -5px 0px 0px #E31E24 inset;
@@ -1734,20 +1778,177 @@
     justify-content: center;
 
     flex: 0 0 auto;
-    @include adaptiveValue("width", 90, 60);
-    @include adaptiveValue("height", 90, 60);
+    width: toRem(90);
+    height: toRem(90);
+
+    // @include adaptiveValue("width", 90, 60);
+    // @include adaptiveValue("height", 90, 60);
 
     opacity: 0;
     transition: all 1s cubic-bezier(.4,0,.2,1);
+    
+    @media (max-width:$mobileSmall){
+      width: toRem(60);
+      height: toRem(60);
+    }
+
     .loaded & {
       opacity: 1;
       transition-delay: 1.9s;
     }
 
     img {
-      @include adaptiveValue("width", 36, 24);
+      width: toRem(36);
+      // @include adaptiveValue("width", 36, 24);
       height: auto;
+      @media (max-width:$mobileSmall){
+        width: toRem(24);
+      }
     }
+    &:hover {
+      .contacts-phone {
+        opacity: 1;
+        pointer-events: all;
+        bottom: 80px;
+        @media (max-width:$mobileSmall){
+           bottom: 40px; 
+        }
+        @media (max-height: em(580.98)){
+          bottom: 0;
+        }
+      }
+      .contacts-phone__link {
+        pointer-events: all;
+      }
+    }
+  }
+	// .phone-page__contacts
+	&__contacts {
+	}
+}
+
+
+.contacts-phone {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  cursor: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  padding-bottom: toRem(45);
+  transition: all .6s ease;
+
+  @media (max-height: em(650.98)) and (min-width: em(480.98)){
+    top: 10%;
+    transform: translateX(0); 
+    left: unset;
+    right: 135%;
+    padding-bottom: 0;
+  }
+
+	// .contacts-phone__body
+	&__body {
+    position: relative;
+    padding: toRem(21) toRem(27) toRem(23);
+    border-radius: toRem(15);
+    background-color: rgba(67, 67, 67, 0.75);
+    @media (max-width:em(1800.98)){
+      padding: toRem(16) toRem(20);
+    }
+	}
+  // .contacts-phone__triangle
+  &__triangle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: toRem(-26);
+    @media (max-width:$mobileSmall){
+      bottom: toRem(-17);
+    }
+    @media (max-height: em(650.98)) and (min-width: em(480.98)){
+      left: unset;
+      right: -51px;
+      top: 50%;
+      transform: translateX(0) translateY(-50%) rotate(-90deg);
+    }
+  }
+  // .contacts-phone__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(25);
+    @media (max-width:$mobileSmall){
+       row-gap: toRem(16); 
+    }
+    @media (max-height: em(650.98))  and (min-width: em(480.98)){
+      flex-direction: row;
+      gap: toRem(16);
+    }
+  }
+  // .contacts-phone__item
+  &__item {
+  }
+  // .contacts-phone__link
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    width: toRem(48);
+    height: toRem(48);
+    
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: -1px -3px 0px 0px #E31E24 inset;
+    transition: all .3s;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    img {
+      height: auto;   
+    }
+    
+    &.phone-link {
+      img {
+        width: toRem(25);
+      }
+    }
+    
+    &.viber-link {
+     img {
+      width: toRem(27);
+      }
+    }
+    
+    &.teleg-link {
+      img {
+        width: toRem(24);
+      }
+    }
+    
+    &.face-link {
+      img {
+        width: toRem(15);
+      }
+    }
+    
+    &.insta-link {
+      img {
+        width: toRem(27);
+      }
+    }
+    
+    &.mail-link {
+      img {
+        width: toRem(27);
+      }
+    }
+
   }
 }
 

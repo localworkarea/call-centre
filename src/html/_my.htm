@@ -1,0 +1,21 @@
+<script>
+  function SetCaptchaToken() {
+    grecaptcha.execute('6Lc6fk0oAAAAAKM2M8A1ucvlzVM1wXzg5kDdkPbm', {action:'validate_captcha'})
+    .then(function(token) {
+      document.getElementById('recaptcha-resp1').setAttribute("value", token);
+      document.getElementById('recaptcha-resp2').setAttribute("value", token);
+      document.getElementById('recaptcha-resp3').setAttribute("value", token);
+    });
+  }
+  grecaptcha.ready(function() {
+    SetCaptchaToken();
+  });
+  setInterval(function () { SetCaptchaToken(); }, 2 * 60 * 1000);
+  
+</script>
+
+
+
+<!-- <a href="#" data-popup="#popupThree" class="phone-page__link">
+	<img src="@img/icons/phone.svg" alt="phone">
+</a> -->

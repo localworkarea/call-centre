@@ -3782,8 +3782,8 @@
                     closeEsc: true,
                     bodyLock: true,
                     hashSettings: {
-                        location: true,
-                        goHash: true
+                        location: false,
+                        goHash: false
                     },
                     on: {
                         beforeOpen: function() {},
@@ -4862,6 +4862,7 @@
         document.addEventListener("DOMContentLoaded", (function() {
             const selectOptions = document.querySelector(".select__options");
             const priceValues = document.querySelectorAll(".price__value");
+            const priceTxtChngOnes = document.querySelectorAll(".price__txt-chng-one");
             let selectedIndex = -1;
             function handleHiddenAttributeChange(mutationsList) {
                 const isHidden = selectOptions.hasAttribute("hidden");
@@ -4871,7 +4872,11 @@
                         priceValues.forEach((priceValue => {
                             priceValue.classList.remove("_show-price");
                         }));
+                        priceTxtChngOnes.forEach((priceTxtChngOne => {
+                            priceTxtChngOne.classList.remove("_show-txt");
+                        }));
                         priceValues[newSelectedIndex].classList.add("_show-price");
+                        priceTxtChngOnes[newSelectedIndex].classList.add("_show-txt");
                         selectedIndex = newSelectedIndex;
                     }
                 }
